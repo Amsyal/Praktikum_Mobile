@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,30 +11,103 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-    home: Scaffold(
-      backgroundColor: Colors.teal,
-      body: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-            height: 100,
-            color: Colors.white,
-            child: Text("Container 1"),
-          ),
-          SizedBox(width: 30),
-          Container(
-            height: 100,
-            color: Colors.red,
-            child: Text("Container 2"),
-          ),
-          Container(
-            height: 100,
-            color: Colors.green,
-            child: Text("Container 3"),
+      home: Scaffold(
+        backgroundColor: Colors.teal,
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage(
+                  "images/profile.jpg"
+                ),
+              ),
+              Text("Muhammad Ibnu",
+                style: GoogleFonts.pacifico(
+                  fontSize: 40,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                "ANDROID DEVELOPER",
+                style: GoogleFonts.sourceSans3(
+                  fontSize: 20,
+                  color: Colors.teal.shade100,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2.5
+                ),
+              ),
+              SizedBox(
+                height: 20,
+                width: 150,
+                child: Divider(
+                  color: Colors.teal.shade100,
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5)
+                ),
+                margin: EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 25
+                ),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.phone,
+                      color: Colors.teal,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "08892347236",
+                      style: GoogleFonts.sourceSans3(
+                        fontSize: 20,
+                        color: Colors.teal
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5)
+                ),
+                margin: EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 25
+                ),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.email,
+                      color: Colors.teal,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "muhammadibnu@gmail.com",
+                      style: GoogleFonts.sourceSans3(
+                        fontSize: 20,
+                        color: Colors.teal
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
           )
-        ],
-      )
-    ),
-  );
+        ),
+      ),
+    );
   }
 }
